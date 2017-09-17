@@ -4,7 +4,7 @@
   "description": "This repo contains the automation code to Automatically Top Post on SydneyToday.com",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "phantomjs index.js"
   },
   "repository": {
     "type": "git",
