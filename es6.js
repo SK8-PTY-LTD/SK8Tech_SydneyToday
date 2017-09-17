@@ -5,8 +5,8 @@ console.log('#####################################');
 const phantom = require('phantom');
 var _ph, _page, _outObj;
 var loggingIn = false;
-var username = "449843149";
-var password = "Sk8Sk80826";
+var username = process.env.SYDNEY_TODAY_USERNAME;
+var password = process.env.SYDNEY_TODAY_PASSWORD;
 
 phantom
 	.create()
