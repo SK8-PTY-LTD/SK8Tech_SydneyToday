@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/SK8-PTY-LTD/SK8Tech_SydneyToday#readme",
   "dependencies": {
-    "webpage": "^0.3.0"
+    "phantom": "^4.0.5"
   }
 }

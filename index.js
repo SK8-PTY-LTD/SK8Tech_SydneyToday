@@ -1,11 +1,15 @@
-console.log('Hello SK8Tech! \n Running SydneyToday.com! Ads TopUp');
+console.log('#####################################');
+console.log('# Running SydneyToday.com Ads TopUp #');
+console.log('#####################################');
 
 var page = require('webpage').create(),
 	currentURL = "http://www.sydneytoday.com/login?destination=/web111712256570004",
 	newAddress = "";
+var username = "449843149";
+var password = "Sk8Sk80826";
 
- console.log('The default user agent is ' + page.settings.userAgent);
- page.settings.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36';
+console.log('The default user agent is ' + page.settings.userAgent);
+page.settings.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36';
 
 page.onConsoleMessage = function(msg) {
 	console.log(msg);
@@ -13,77 +17,86 @@ page.onConsoleMessage = function(msg) {
 
 page.onLoadStarted = function() {
 	loadInProgress = true;
-	// console.log("load started");
 };
 
 page.onLoadFinished = function(url) {
-	loadInProgress = false;
-	console.log("load finished ", currentURL);
-	if (currentURL == "http://www.sydneytoday.com/login?destination=/user/myposts") {
-		page.evaluate(function() {
+	
+	console.log("# Loading Finished: ", currentURL);
+	console.log('#####################################');
 
-			document.getElementById("tel").value = "449843149";
-			document.getElementById("password").value = "Sk8Sk80826";
+	// User loadInProgress to ensure that the 'Top Post' is only clicked once.
+	if (loadInProgress) {
+		if (currentURL == "http://www.sydneytoday.com/login?destination=/user/myposts") {
+			page.evaluate(function(username, password) {
 
-			console.log("账号密码...");
+				document.getElementById("tel").value = username;
+				document.getElementById("password").value = password;
 
-			document.getElementById("user-login").click();
+				console.log("账号密码...");
 
-			console.log("登录中...");
+				document.getElementById("user-login").click();
 
-		});
-	} else if (currentURL == "http://www.sydneytoday.com/user/myposts") {
+				console.log("登录中...");
 
-		page.evaluate(function() {
-			console.log("个人主页");
+			}, username, password);
+		} else if (currentURL == "http://www.sydneytoday.com/user/myposts") {
+			page.evaluate(function() {
+				console.log("个人主页");
 
-			document.getElementsByClassName("btn btn-default btn-sm account-comment-item-edit__ifdisable")[1].click();
-		});
+				// Top Post
+				document.getElementsByClassName("dingtie")[0].click();
 
-	} else if (currentURL == "http://www.sydneytoday.com/Edit/post_yellowpage?classify=6381&id=111712256570004") {
+				// Update post
+				document.getElementsByClassName("btn btn-default btn-sm account-comment-item-edit__ifdisable")[1].click();
+			});
 
-		page.evaluate(function() {
+		} else if (currentURL == "http://www.sydneytoday.com/Edit/post_yellowpage?classify=6381&id=111712256570004") {
 
-			var address = document.getElementById("address").value;
+			page.evaluate(function() {
 
-			console.log("个人地址", address);
+				var address = document.getElementById("address").value;
 
-			if (address == "330 Wattle Street") {
-				newAddress = "330 Wattle Street, Ultimo, New South Wales, Australia";
-				document.getElementById("address").value = newAddress;
-			} else {
-				newAddress = "330 Wattle Street";
-				document.getElementById("address").value = newAddress;
-			}
+				console.log("个人地址", address);
 
-			console.log("更新地址", document.getElementById("address").value);
+				if (address == "330 Wattle Street") {
+					newAddress = "330 Wattle Street, Ultimo, New South Wales, Australia";
+					document.getElementById("address").value = newAddress;
+				} else {
+					newAddress = "330 Wattle Street";
+					document.getElementById("address").value = newAddress;
+				}
 
-			document.getElementById("post_submit").click();
+				console.log("更新地址", document.getElementById("address").value);
 
-		});
+				document.getElementById("post_submit").click();
 
-	} else if (currentURL == "http://www.sydneytoday.com/web111712256570004") {
-		page.evaluate(function() {
+			});
 
-			console.log("已更新...");
+		} else if (currentURL == "http://www.sydneytoday.com/web111712256570004") {
+			page.evaluate(function() {
 
-			document.location = "http://www.sydneytoday.com/globals/logout"
+				console.log("已更新...");
 
-		});
-	} else if (currentURL == "http://www.sydneytoday.com/") {
-		page.evaluate(function() {
+				document.location = "http://www.sydneytoday.com/globals/logout"
 
-			console.log("已登出...");
+			});
+		} else if (currentURL == "http://www.sydneytoday.com/") {
+			page.evaluate(function() {
 
-			document.location = "http://www.sydneytoday.com/globals/logout"
+				console.log("已登出...");
 
-		});
-		phantom.exit();
+				document.location = "http://www.sydneytoday.com/globals/logout"
+
+			});
+			phantom.exit();
+		}
 	}
+	loadInProgress = false;
 };
 
 page.onUrlChanged = function(targetUrl) {
-	console.log('New URL: ' + targetUrl);
+	console.log('#####################################');
+	console.log('# URL Changed: ' + targetUrl);
 	currentURL = targetUrl;
 };
 

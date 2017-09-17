@@ -9,6 +9,7 @@ In order to use this automation code, [PhantomJS](http://phantomjs.org/) needs t
 
 ```
 git clone https://github.com/SK8-PTY-LTD/SK8Tech_SydneyToday.git
-npm install
+// Edit index.js accordingly
+phantomjs index.js
 ```
 
