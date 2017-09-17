@@ -1,0 +1,26 @@
+{
+  "name": "sk8tech-sydneytoday",
+  "version": "1.0.0",
+  "description": "This repo contains the automation code to Automatically Top Post on SydneyToday.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SK8-PTY-LTD/SK8Tech_SydneyToday.git"
+  },
+  "keywords": [
+    "SydneyToday",
+    "今日悉尼"
+  ],
+  "author": "Jacktator",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SK8-PTY-LTD/SK8Tech_SydneyToday/issues"
+  },
+  "homepage": "https://github.com/SK8-PTY-LTD/SK8Tech_SydneyToday#readme",
+  "dependencies": {
+    "webpage": "^0.3.0"
+  }
+}
