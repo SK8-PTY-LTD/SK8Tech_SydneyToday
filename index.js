@@ -5,8 +5,9 @@ console.log('#####################################');
 var page = require('webpage').create(),
 	currentURL = "http://www.sydneytoday.com/login?destination=/web111712256570004",
 	newAddress = "";
-var username = process.env.SYDNEY_TODAY_USERNAME;
-var password = process.env.SYDNEY_TODAY_PASSWORD;
+var envVars = require('system').env
+var username = envVars.ST_USERNAME;
+var password = envVars.ST_PASSWORD;
 
 console.log('The default user agent is ' + page.settings.userAgent);
 page.settings.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36';

@@ -9,7 +9,8 @@ In order to use this automation code, [PhantomJS](http://phantomjs.org/) needs t
 
 ```
 git clone https://github.com/SK8-PTY-LTD/SK8Tech_SydneyToday.git
-// Edit index.js accordingly
-phantomjs index.js
+// Modify the following command accordingly
+// ST_USERNAME='username' ST_PASSWORD='password' phantomjs index.js
+ST_USERNAME='449843149' ST_PASSWORD='' phantomjs index.js
 ```
 
