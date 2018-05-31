@@ -3,14 +3,24 @@ This repo contains the automation code to Automatically Top Post on SydneyToday.
 
 ## Prerequisites
 
-In order to use this automation code, [PhantomJS](http://phantomjs.org/) needs to be installed. Please visit the [download page](http://phantomjs.org/download.html) for more instructions.
+In order to use this automation code, the following software needs to be installed globally. 
+1. [PhantomJS](http://phantomjs.org/)
+1. [CasperJS](http://casperjs.org/)
+1. [TagUI](https://github.com/kelaberetiv/TagUI)
 
-##  Installation
+> npm i -g phantom casperjs tagui
 
-```
-git clone https://github.com/SK8-PTY-LTD/SK8Tech_SydneyToday.git
-// Modify the following command accordingly
-// ST_USERNAME='username' ST_PASSWORD='password' phantomjs index.js
-ST_USERNAME='449843149' ST_PASSWORD='' phantomjs index.js
-```
+## Usage
 
+### Recording an automation
+
+1. Install a chrome extension: [TagUI Web Automation](https://chrome.google.com/webstore/detail/tagui-web-automation/egdllmehgfgjebhlkjmcnhiocfcidnjk) to record your automation. 
+1. Open the page, and click the extension, then 'Start' to start recording
+1. Once finished, click the extension again, click 'Export'. You should see a new tab opening
+1. Copy the text on the page, then paste it into a new text file, let's name it 'automation.txt'
+
+### Running an automation
+
+If you have install the packages according to [Prerequisites](#prerequisites), you should be able to simply run the following command in terminal:
+
+> tagui tagui_flow.js

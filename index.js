@@ -3,7 +3,7 @@ console.log('# Running SydneyToday.com Ads TopUp #');
 console.log('#####################################');
 
 var page = require('webpage').create(),
-	currentURL = "http://www.sydneytoday.com/login?destination=/web111712256570004",
+	currentURL = "",
 	newAddress = "";
 var envVars = require('system').env
 var username = envVars.ST_USERNAME;

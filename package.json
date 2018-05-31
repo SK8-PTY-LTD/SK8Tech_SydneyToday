@@ -21,8 +21,10 @@
   },
   "homepage": "https://github.com/SK8-PTY-LTD/SK8Tech_SydneyToday#readme",
   "dependencies": {
+    "casperjs": "^1.1.4",
     "phantom": "^4.0.5",
     "rxjs": "^5.4.3",
-    "system": "^2.0.1"
+    "system": "^2.0.1",
+    "tagui": "file://tagui"
   }
 }
