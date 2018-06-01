@@ -1,10 +1,21 @@
 http://www.sydneytoday.com/login?destination=/user/myposts
-click .tab-pane.active #tel
-enter .tab-pane.active #tel as 449843149
-click .tab-pane.active #password
-enter .tab-pane.active #password as 
-click .tab-pane.active #user-login
+//loading URL in chrome tab
+enter #tel as 449843149
+// filling mobile number box
+enter #password as 
+// filling password box
+click #user-login
+// clicking log-in button
+//snap page
+//taking screenshot (optional)
+wait 3.5 seconds
+snap page
 click .row.account-itemcell:nth-child(1) .btn.btn-default.btn-sm.account-comment-item-edit__ifdisable.dingtie
-click .row.account-itemcell:nth-child(3) .btn.btn-default.btn-sm.account-comment-item-edit__ifdisable.dingtie
-click .row.account-itemcell:nth-child(5) .btn.btn-default.btn-sm.account-comment-item-edit__ifdisable.dingtie
-click //a[contains(text(),"退出") or contains("http://www.sydneytoday.com/globals/logout",@href)]
+// clicking button for post 1
+wait 4.5 seconds
+click .row.account-itemcell:nth-child(3) .icon-arrow-up-line
+// clicking buttton for post 2
+wait  4 seconds
+click .header-right__top > a:nth-child(3)
+//clicking logout button after everthing is finished
+wait 2 seconds
